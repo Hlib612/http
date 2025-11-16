@@ -10,6 +10,37 @@
 <button id="feth_todos">Click me</button>
 <ul id="list"></ul>
 
-    <script src="./http.js"></script>
+ <form class="form-inline search-form js-search-form">
+      <div class="form-group">
+        <input type="text" class="form-control" name="query" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Шукати</button>
+    </form>
+
+    <div class="js-card-container"></div>
+
+
+     <template id="pokemon-templ">
+        <div class="card">
+            <div class="card-img-top">
+                <img src="{{sprites.front_default}}" alt="{{name}}">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Ім'я: {{name}}</h2>
+                <p class="card-text">Вага: {{weight}}</p>
+                <p class="card-text">Зріст: {{height}}</p>
+                <p class="card-text"><b>Вміння</b></p>
+                <ul class="list-group"></ul>
+                    {{#each abilities}}
+                        <li class="list-group-item">{{ability.name}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <!-- <script src="./http.js" type="module"></script> -->
+    <script src="./pokemon.js" type="module"></script>
 </body>
 </html>
